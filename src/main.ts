@@ -33,7 +33,7 @@ async function bootstrap() {
     SwaggerModule.setup('api', app, document);
   }
 
-  app.use(bodyParser.text({ type: 'text/html' }));
+  app.use(bodyParser.text({ type: 'text/html', limit: '100mb' }));
 
   if (process.env.REDIS_URL === undefined)
     logger.warn('No redis configured! Print soon feature unavailable.');

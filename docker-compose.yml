@@ -14,7 +14,20 @@ services:
       - browserless
 
   redis:
+    platform: linux/x86_64
     image: redis:7.4-alpine
 
+
   browserless:
+    platform: linux/x86_64
+    ports:
+      - 3001:3000
     image: ghcr.io/browserless/chrome:v2.31.0
+    extra_hosts:
+      - mijnhouseofskillsregioamsterdam.nl.local:host-gateway # ip van host.docker.internal
+      - mijn.houseofskillsregioamsterdam.nl.local:host-gateway # ip van host.docker.internal
+      - mijn.houseofskillsregiogroningen.nl.local:host-gateway # ip van host.docker.internal
+      - tidr.ditwerkt.nl.local:host-gateway # ip van host.docker.internal
+      - nom.ditwerkt.nl.local:host-gateway
+      - greencareer.ditwerkt.nl.local:host-gateway
+      - skillsinsight.ditwerkt.nl.local:host-gateway
