@@ -37,3 +37,4 @@ TODO.md
 .env
 vercel.json
 /docs/docker/.env
+/browserless/rootCA.pem
